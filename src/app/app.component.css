@@ -1,0 +1,26 @@
+.coach {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 5px;
+}
+
+.available {
+  background-color: lightgreen;
+}
+
+.booked {
+  background-color: lightcoral;
+}

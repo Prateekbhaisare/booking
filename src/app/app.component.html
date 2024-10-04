@@ -1,0 +1,21 @@
+<div>
+  <label for="seats">Enter number of seats to book (1-7): </label>
+  <input type="number" [(ngModel)]="requestedSeats" min="1" />
+  <button (click)="bookSeats()">Book</button>
+</div>
+
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+
+<h2>Coach Layout</h2>
+<div class="coach">
+  <div *ngFor="let row of seatLayout; let i = index" class="row">
+    <span
+      *ngFor="let seat of row; let j = index"
+      [ngClass]="{ booked: seat.booked, available: !seat.booked }"
+      class="seat"
+      >{{ seat.number }}</span
+    >
+  </div>
+</div>
+
+<p *ngIf="bookedSeats.length > 0">Seats booked: {{ bookedSeats.join(', ') }}</p>
